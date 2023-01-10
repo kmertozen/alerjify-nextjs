@@ -1,8 +1,10 @@
+import axios from 'axios';
 import React from 'react'
 import RecipeCard from '../../components/RecipeCard';
-import AlerjiSwiper from '../../components/AlerjiSwiper';
 
 function index({ recipes, alerjiler }) {
+    axios("http://localhost:1337/api/recipes")
+    .then(response=>console.log(response.data.data))
     return (
         <div className='container wrapper'>
             <div className='allergies'>
